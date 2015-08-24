@@ -1,0 +1,34 @@
+{
+  "name": "react-hot-transform",
+  "version": "1.0.0",
+  "description": "React Hot Loader for Browserify. Tweak React components in real time.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AgentME/react-hot-transform.git"
+  },
+  "keywords": [
+    "react",
+    "browserify",
+    "hmr",
+    "livereload",
+    "live",
+    "edit",
+    "hot",
+    "reload"
+  ],
+  "author": "Chris Cowan <agentme49@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AgentME/react-hot-transform/issues"
+  },
+  "homepage": "https://github.com/AgentME/react-hot-transform#readme",
+  "dependencies": {
+    "convert-source-map": "^1.1.1",
+    "react-hot-loader": "^1.2.9",
+    "through2": "^2.0.0"
+  }
+}
