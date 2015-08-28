@@ -20,7 +20,7 @@ module.exports = function(file, opts) {
       resourcePath: file,
       callback: function(err, source, map) {
         if (source && map) {
-          source = source + convert.fromObject(map).toComment();
+          source = source + convert.fromJSON(map).toComment();
         }
         next(err, source);
       }
