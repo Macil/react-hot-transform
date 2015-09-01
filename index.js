@@ -6,10 +6,13 @@ var convert = require('convert-source-map');
 var reactHotLoader = require('react-hot-loader');
 
 module.exports = function(file, opts) {
-  var basedir = opts.basedir !== undefined ? opts.basedir : process.cwd();
-
+  var pieces = [];
   return through.obj(function(row, enc, next) {
-    var source = row.toString();
+    pieces.push(row);
+    next();
+  }, function(done) {
+    var self = this;
+    var source = pieces.join('');
     var inputMapCV = convert.fromSource(source);
     var inputMap;
     if (inputMapCV) {
@@ -19,10 +22,15 @@ module.exports = function(file, opts) {
     reactHotLoader.call({
       resourcePath: file,
       callback: function(err, source, map) {
-        if (source && map) {
-          source = source + convert.fromJSON(map).toComment();
+        if (err) {
+          done(err);
+        } else {
+          if (source && map) {
+            source = source + convert.fromJSON(map).toComment();
+          }
+          self.push(source);
+          done();
         }
-        next(err, source);
       }
     }, source, inputMap);
   });
