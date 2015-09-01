@@ -4,7 +4,7 @@
   "description": "React Hot Loader for Browserify. Tweak React components in real time.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -30,5 +30,8 @@
     "convert-source-map": "^1.1.1",
     "react-hot-loader": "^1.2.9",
     "through2": "^2.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.0"
   }
 }
