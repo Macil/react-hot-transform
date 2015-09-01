@@ -1,6 +1,6 @@
 {
   "name": "react-hot-transform",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React Hot Loader for Browserify. Tweak React components in real time.",
   "main": "index.js",
   "scripts": {
