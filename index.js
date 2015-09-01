@@ -25,7 +25,7 @@ module.exports = function(file, opts) {
         if (err) {
           done(err);
         } else {
-          if (source && map) {
+          if (map) {
             source = source + convert.fromJSON(map).toComment();
           }
           self.push(source);
