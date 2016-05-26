@@ -19,6 +19,13 @@ module.exports = function(file, opts) {
       inputMap = inputMapCV.toObject();
       source = convert.removeComments(source);
     }
+
+    // Only hot load js files
+    if (!/.js$/.test(file)) {
+      self.push(source)
+      return done()
+    }
+    
     reactHotLoader.call({
       resourcePath: file,
       callback: function(err, source, map) {
